@@ -26,7 +26,6 @@
       animation: fadeInOut 10s ease-in-out infinite;
     }
 
-    /* Animation for background video fade */
     @keyframes fadeInOut {
       0% { opacity: 0; }
       50% { opacity: 1; }
@@ -120,11 +119,12 @@
   </style>
 </head>
 <body>
-  <!-- Background Video -->
+  <!-- ✅ Background Video (Local File) -->
   <video autoplay muted loop id="bg-video">
-    <source src="https://cdn.coverr.co/videos/coverr-indian-dinner-table-2740/1080p.mp4" type="video/mp4" />
+    <source src="resources/restaurant-video.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+
   <div class="overlay"></div>
 
   <!-- Navigation Bar -->

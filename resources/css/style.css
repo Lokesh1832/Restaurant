@@ -9,15 +9,16 @@ body {
   color: white;
   height: 100vh;
   overflow: hidden;
+  position: relative;
 }
 
 /* Background Video */
 #bg-video {
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed to avoid issues on scroll */
   top: 0;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -2;
   opacity: 0.8;
@@ -34,11 +35,11 @@ body {
 /* Overlay for darkening background */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-  width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  height: 100vh;
+  width: 100vw;
   z-index: -1;
 }
 

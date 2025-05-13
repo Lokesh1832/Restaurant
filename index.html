@@ -2,15 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Rasoi Bellevue | Home</title>
+  <title>Rasoi | Home</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1604908177520-472c5d5f0d89?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-      height: 100vh;
       color: white;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Background Video */
+    #bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.8;
+      animation: fadeInOut 10s ease-in-out infinite;
+    }
+
+    /* Animation for background video fade */
+    @keyframes fadeInOut {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
     }
 
     .overlay {
@@ -20,6 +40,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: -1;
     }
 
     .navbar {
@@ -38,12 +59,42 @@
       color: #f4a261;
     }
 
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #f4a261;
+    }
+
+    .order-btn {
+      padding: 0.6rem 1.2rem;
+      background-color: #f4a261;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .order-btn:hover {
+      background-color: #e76f51;
+    }
+
     .hero {
       position: relative;
       z-index: 2;
       text-align: center;
-      top: 30%;
-      transform: translateY(-30%);
+      top: 25%;
+      transform: translateY(-25%);
       padding: 0 2rem;
     }
 
@@ -92,15 +143,30 @@
   </style>
 </head>
 <body>
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="https://cdn.coverr.co/videos/coverr-indian-dinner-table-2740/1080p.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
   <div class="overlay"></div>
 
+  <!-- Navigation Bar -->
   <nav class="navbar">
-    <div class="logo">Rasoi Bellevue</div>
+    <div class="logo">Rasoi</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
+      <a href="reviews.html">Reviews</a>
+    </div>
+    <a href="menu.html" class="order-btn">Order From Here</a>
   </nav>
 
+  <!-- Hero Section -->
   <div class="hero">
-    <h1>Welcome to Rasoi Bellevue</h1>
-    <p>Authentic Indian Cuisine in the Heart of Bellevue</p>
+    <h1>Welcome to Rasoi</h1>
+    <p>Authentic Indian Cuisine Crafted with Passion</p>
 
     <div class="button-group">
       <button class="btn">Home</button>
@@ -111,6 +177,6 @@
     </div>
   </div>
 
-  <footer>&copy; 2025 Rasoi Bellevue. All rights reserved.</footer>
+  <footer>&copy; 2025 Rasoi. All rights reserved.</footer>
 </body>
-</html> 
+</html>

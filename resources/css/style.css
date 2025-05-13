@@ -14,7 +14,7 @@ body {
 
 /* Background Video */
 #bg-video {
-  position: fixed; /* Changed from absolute to fixed to avoid issues on scroll */
+  position: fixed; /* Ensures the video stays fixed during any scroll */
   top: 0;
   left: 0;
   width: 100vw;
@@ -35,7 +35,7 @@ body {
 /* Overlay for darkening background */
 .overlay {
   background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
+  position: fixed; /* Same as video to ensure full overlay effect */
   top: 0;
   left: 0;
   height: 100vh;
